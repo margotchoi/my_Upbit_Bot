@@ -372,3 +372,9 @@
 2026-03-26 22:34:13,023  INFO  Open positions: None
 2026-03-26 22:34:13,028  INFO  Sleeping 300s until next cycle...
 
+2026-03-26 22:39:13,037  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:39:13,239  INFO  Available KRW: 1,604,107
+2026-03-26 22:39:19,376  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:39:21,542  INFO  Open positions: None
+2026-03-26 22:39:21,543  INFO  Sleeping 300s until next cycle...
+
