@@ -287,10 +287,15 @@ class UpbitTrader:
         """Commit and push data files to GitHub so Streamlit Cloud can read them."""
         repo = Path(__file__).parent
         try:
+            # Pull latest code changes first
+            subprocess.run(["git", "stash"], cwd=repo, capture_output=True)
+            subprocess.run(["git", "pull", "origin", "main", "--rebase"], cwd=repo, capture_output=True)
+            subprocess.run(["git", "stash", "pop"], cwd=repo, capture_output=True)
+            # Push data files
             subprocess.run(["git", "add", "positions.json", "equity_log.csv", "heartbeat.txt", "trade_log.txt", "balance.json"],
                            cwd=repo, capture_output=True)
             result = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
-            if result.returncode != 0:  # there are staged changes
+            if result.returncode != 0:
                 subprocess.run(["git", "commit", "-m", f"bot: data update {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
                                cwd=repo, capture_output=True)
                 subprocess.run(["git", "push", "origin", "main"],
