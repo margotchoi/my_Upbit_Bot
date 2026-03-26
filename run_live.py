@@ -40,10 +40,11 @@ def main():
     print("  ⚠️  KRW-DOGE는 절대 건드리지 않습니다.")
     print()
 
-    confirm = input("  거래를 시작하시겠습니까? (yes 입력 시 시작): ").strip().lower()
-    if confirm != "yes":
-        print("취소되었습니다.")
-        sys.exit(0)
+    if sys.stdin.isatty():
+        confirm = input("  거래를 시작하시겠습니까? (yes 입력 시 시작): ").strip().lower()
+        if confirm != "yes":
+            print("취소되었습니다.")
+            sys.exit(0)
 
     print()
     trader.run(interval_seconds=300)  # 5분 간격
