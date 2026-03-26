@@ -4,6 +4,7 @@ import subprocess
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import pyupbit
@@ -22,14 +23,18 @@ PROTECTED_TICKERS = {"KRW-DOGE"}
 
 POSITIONS_FILE = Path(__file__).parent / "positions.json"
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s  %(levelname)s  %(message)s",
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler("trade_log.txt", encoding="utf-8"),
-    ],
-)
+class KSTFormatter(logging.Formatter):
+    def formatTime(self, record, datefmt=None):
+        ct = datetime.fromtimestamp(record.created, tz=ZoneInfo("Asia/Seoul"))
+        return ct.strftime("%Y-%m-%d %H:%M:%S")
+
+_formatter = KSTFormatter("%(asctime)s  %(levelname)s  %(message)s")
+_stream_handler = logging.StreamHandler()
+_stream_handler.setFormatter(_formatter)
+_file_handler = logging.FileHandler("trade_log.txt", encoding="utf-8")
+_file_handler.setFormatter(_formatter)
+
+logging.basicConfig(level=logging.INFO, handlers=[_stream_handler, _file_handler])
 log = logging.getLogger(__name__)
 
 
