@@ -67,8 +67,10 @@ def load_equity_history():
     if not EQUITY_LOG_FILE.exists(): return []
     df = pd.read_csv(EQUITY_LOG_FILE, names=["time","equity"])
     df["time"] = pd.to_datetime(df["time"])
-    df = df.drop_duplicates("time").sort_values("time").tail(200)
-    return [{"x": str(r.time)[:16], "y": int(r.equity)} for _, r in df.iterrows()]
+    df = df.sort_values("time")
+    df["date"] = df["time"].dt.date
+    df = df.groupby("date")["equity"].last().reset_index()
+    return [{"x": str(r.date), "y": int(r.equity)} for _, r in df.iterrows()]
 
 def get_market_data(tickers):
     try:
@@ -265,7 +267,7 @@ for ticker in PROTECTED_TICKERS:
     prot_pnl_info = f'<div style="font-size:11px;color:{color};margin-top:2px">{arrow} {abs(chg_val):.2f}% (24h)</div>'
 
 now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-initial_capital = 500000
+initial_capital = 1604107
 
 open_pnl_sign = "+" if open_pnl >= 0 else ""
 today_pnl_sign = "+" if today_pnl >= 0 else ""
