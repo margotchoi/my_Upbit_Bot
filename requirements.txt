@@ -1,0 +1,6 @@
+pyupbit
+pandas
+numpy
+python-dotenv
+requests
+tabulate

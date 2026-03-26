@@ -1,0 +1,374 @@
+2026-03-25 23:43:56,474  INFO  UpbitTrader initialized.
+2026-03-25 23:43:56,475  INFO  Protected tickers (never touched): {'KRW-DOGE'}
+2026-03-25 23:47:08,952  INFO  UpbitTrader initialized.
+2026-03-25 23:47:08,953  INFO  Protected tickers (never touched): {'KRW-DOGE'}
+2026-03-26 09:10:58,033  INFO  UpbitTrader initialized.
+2026-03-26 09:10:58,033  INFO  Protected tickers (never touched): {'KRW-DOGE'}
+2026-03-26 09:11:01,988  INFO  🚀 Live trading started. Cycle interval: 300s
+2026-03-26 09:11:02,067  INFO  KRW balance: 1,604,107
+2026-03-26 09:11:02,067  INFO  Loaded positions: None
+2026-03-26 09:11:02,067  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:11:02,135  INFO  Available KRW: 1,604,107
+2026-03-26 09:11:06,818  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:11:09,057  INFO  Open positions: None
+2026-03-26 09:11:09,058  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:12:37,912  INFO  UpbitTrader initialized.
+2026-03-26 09:12:37,912  INFO  Protected tickers (never touched): {'KRW-DOGE'}
+2026-03-26 09:12:45,054  INFO  🚀 Live trading started. Cycle interval: 300s
+2026-03-26 09:12:45,127  INFO  KRW balance: 1,604,107
+2026-03-26 09:12:45,127  INFO  Loaded positions: None
+2026-03-26 09:12:45,128  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:12:45,204  INFO  Available KRW: 1,604,107
+2026-03-26 09:12:49,896  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:12:52,107  INFO  Open positions: None
+2026-03-26 09:12:52,108  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:17:52,068  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:17:52,196  INFO  Available KRW: 1,604,107
+2026-03-26 09:17:57,042  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:17:59,362  INFO  Open positions: None
+2026-03-26 09:17:59,363  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:22:59,367  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:22:59,498  INFO  Available KRW: 1,604,107
+2026-03-26 09:23:04,434  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:23:06,766  INFO  Open positions: None
+2026-03-26 09:23:06,766  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:28:06,783  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:28:06,903  INFO  Available KRW: 1,604,107
+2026-03-26 09:28:11,787  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:28:14,122  INFO  Open positions: None
+2026-03-26 09:28:14,123  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:33:14,133  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:33:14,269  INFO  Available KRW: 1,604,107
+2026-03-26 09:33:19,217  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:33:21,553  INFO  Open positions: None
+2026-03-26 09:33:21,555  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:38:21,566  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:38:21,680  INFO  Available KRW: 1,604,107
+2026-03-26 09:38:26,645  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:38:28,979  INFO  Open positions: None
+2026-03-26 09:38:28,980  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:43:28,991  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:43:29,130  INFO  Available KRW: 1,604,107
+2026-03-26 09:43:34,051  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:43:36,417  INFO  Open positions: None
+2026-03-26 09:43:36,419  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:48:36,437  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:48:36,552  INFO  Available KRW: 1,604,107
+2026-03-26 09:48:41,904  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:48:43,862  INFO  Open positions: None
+2026-03-26 09:48:43,863  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:53:43,881  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:53:44,020  INFO  Available KRW: 1,604,107
+2026-03-26 09:53:49,331  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:53:51,293  INFO  Open positions: None
+2026-03-26 09:53:51,294  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 09:58:51,312  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 09:58:51,429  INFO  Available KRW: 1,604,107
+2026-03-26 09:58:56,798  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 09:58:58,725  INFO  Open positions: None
+2026-03-26 09:58:58,727  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 10:03:58,734  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 10:03:58,885  INFO  Available KRW: 1,604,107
+2026-03-26 10:04:04,402  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 10:04:06,395  INFO  Open positions: None
+2026-03-26 10:04:06,396  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 10:09:06,405  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 10:09:06,533  INFO  Available KRW: 1,604,107
+2026-03-26 10:09:11,866  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 10:09:13,824  INFO  Open positions: None
+2026-03-26 10:09:13,825  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 10:14:13,832  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 10:14:13,981  INFO  Available KRW: 1,604,107
+2026-03-26 10:14:19,351  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 10:14:21,295  INFO  Open positions: None
+2026-03-26 10:14:21,297  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 10:52:29,625  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 10:52:29,776  INFO  Available KRW: 1,604,107
+2026-03-26 10:52:35,510  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 10:52:37,084  INFO  Open positions: None
+2026-03-26 10:52:37,085  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 12:24:58,380  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 12:24:58,523  INFO  Available KRW: 1,604,107
+2026-03-26 12:25:03,930  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 12:25:05,876  INFO  Open positions: None
+2026-03-26 12:25:05,877  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 12:45:23,568  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 12:45:23,896  INFO  Available KRW: 1,604,107
+2026-03-26 12:45:29,254  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 12:45:31,227  INFO  Open positions: None
+2026-03-26 12:45:31,227  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 13:24:12,985  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 13:24:13,119  INFO  Available KRW: 1,604,107
+2026-03-26 13:24:18,455  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 13:24:20,385  INFO  Open positions: None
+2026-03-26 13:24:20,386  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 14:17:07,491  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 14:17:07,651  INFO  Available KRW: 1,604,107
+2026-03-26 14:17:13,579  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 14:17:15,126  INFO  Open positions: None
+2026-03-26 14:17:15,126  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 15:00:48,895  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 15:00:49,041  INFO  Available KRW: 1,604,107
+2026-03-26 15:16:29,024  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 15:16:30,631  INFO  Open positions: None
+2026-03-26 15:16:30,632  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 15:44:58,162  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 15:44:58,345  INFO  Available KRW: 1,604,107
+2026-03-26 15:45:03,781  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 15:45:05,726  INFO  Open positions: None
+2026-03-26 15:45:05,727  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 16:22:39,044  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 16:22:39,178  INFO  Available KRW: 1,604,107
+2026-03-26 16:22:44,569  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 16:22:46,540  INFO  Open positions: None
+2026-03-26 16:22:46,541  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 16:46:28,822  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 16:46:28,992  INFO  Available KRW: 1,604,107
+2026-03-26 16:46:34,382  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 16:46:36,364  INFO  Open positions: None
+2026-03-26 16:46:36,366  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 17:23:27,399  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 17:23:27,534  INFO  Available KRW: 1,604,107
+2026-03-26 17:23:32,883  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 17:23:34,838  INFO  Open positions: None
+2026-03-26 17:23:34,839  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 17:48:14,146  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 17:48:14,309  INFO  Available KRW: 1,604,107
+2026-03-26 17:48:19,703  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 17:48:21,671  INFO  Open positions: None
+2026-03-26 17:48:21,672  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 18:24:31,618  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 18:24:31,773  INFO  Available KRW: 1,604,107
+2026-03-26 18:24:37,119  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 18:24:39,075  INFO  Open positions: None
+2026-03-26 18:24:39,076  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 18:49:40,503  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 18:49:40,674  INFO  Available KRW: 1,604,107
+2026-03-26 18:49:46,123  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 18:49:48,100  INFO  Open positions: None
+2026-03-26 18:49:48,100  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 19:26:03,117  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 19:26:03,270  INFO  Available KRW: 1,604,107
+2026-03-26 19:26:09,049  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 19:26:10,641  INFO  Open positions: None
+2026-03-26 19:26:10,641  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 19:55:06,661  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 19:55:06,744  INFO  Available KRW: 1,604,107
+2026-03-26 19:55:12,177  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 19:55:13,667  INFO  Open positions: None
+2026-03-26 19:55:13,668  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:00:13,678  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:00:13,813  INFO  Available KRW: 1,604,107
+2026-03-26 20:00:19,606  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:00:21,174  INFO  Open positions: None
+2026-03-26 20:00:21,175  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:05:21,184  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:05:21,326  INFO  Available KRW: 1,604,107
+2026-03-26 20:05:27,131  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:05:28,720  INFO  Open positions: None
+2026-03-26 20:05:28,720  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:10:28,731  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:10:28,902  INFO  Available KRW: 1,604,107
+2026-03-26 20:10:34,768  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:10:36,376  INFO  Open positions: None
+2026-03-26 20:10:36,377  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:15:36,394  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:15:36,566  INFO  Available KRW: 1,604,107
+2026-03-26 20:15:42,373  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:15:43,929  INFO  Open positions: None
+2026-03-26 20:15:43,930  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:20:43,936  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:20:44,056  INFO  Available KRW: 1,604,107
+2026-03-26 20:20:49,827  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:20:51,410  INFO  Open positions: None
+2026-03-26 20:20:51,411  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:25:51,420  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:25:51,560  INFO  Available KRW: 1,604,107
+2026-03-26 20:25:57,312  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:25:58,858  INFO  Open positions: None
+2026-03-26 20:25:58,860  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:30:58,870  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:30:59,006  INFO  Available KRW: 1,604,107
+2026-03-26 20:31:04,837  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:31:06,430  INFO  Open positions: None
+2026-03-26 20:31:06,431  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:36:06,445  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:36:06,606  INFO  Available KRW: 1,604,107
+2026-03-26 20:36:12,404  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:36:13,962  INFO  Open positions: None
+2026-03-26 20:36:13,964  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:41:13,968  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:41:14,089  INFO  Available KRW: 1,604,107
+2026-03-26 20:41:19,802  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:41:21,386  INFO  Open positions: None
+2026-03-26 20:41:21,387  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:46:21,396  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:46:21,517  INFO  Available KRW: 1,604,107
+2026-03-26 20:46:27,224  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:46:28,809  INFO  Open positions: None
+2026-03-26 20:46:28,809  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:51:28,822  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:51:28,971  INFO  Available KRW: 1,604,107
+2026-03-26 20:51:34,836  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:51:36,453  INFO  Open positions: None
+2026-03-26 20:51:36,454  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 20:56:36,462  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 20:56:36,608  INFO  Available KRW: 1,604,107
+2026-03-26 20:56:42,420  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 20:56:43,992  INFO  Open positions: None
+2026-03-26 20:56:43,993  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:01:44,006  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:01:44,143  INFO  Available KRW: 1,604,107
+2026-03-26 21:01:49,913  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:01:51,484  INFO  Open positions: None
+2026-03-26 21:01:51,485  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:06:51,499  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:06:51,646  INFO  Available KRW: 1,604,107
+2026-03-26 21:06:57,435  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:06:59,020  INFO  Open positions: None
+2026-03-26 21:06:59,021  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:11:59,033  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:11:59,158  INFO  Available KRW: 1,604,107
+2026-03-26 21:12:04,844  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:12:06,413  INFO  Open positions: None
+2026-03-26 21:12:06,413  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:17:06,481  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:17:06,618  INFO  Available KRW: 1,604,107
+2026-03-26 21:17:12,331  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:17:13,883  INFO  Open positions: None
+2026-03-26 21:17:13,884  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:22:13,907  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:22:14,048  INFO  Available KRW: 1,604,107
+2026-03-26 21:22:19,908  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:22:21,487  INFO  Open positions: None
+2026-03-26 21:22:21,488  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:27:21,506  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:27:21,653  INFO  Available KRW: 1,604,107
+2026-03-26 21:27:27,071  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:27:28,564  INFO  Open positions: None
+2026-03-26 21:27:28,565  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:32:28,579  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:32:28,657  INFO  Available KRW: 1,604,107
+2026-03-26 21:32:34,019  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:32:35,542  INFO  Open positions: None
+2026-03-26 21:32:35,542  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:37:35,556  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:37:35,672  INFO  Available KRW: 1,604,107
+2026-03-26 21:37:41,059  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:37:42,539  INFO  Open positions: None
+2026-03-26 21:37:42,539  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:42:42,552  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:42:42,656  INFO  Available KRW: 1,604,107
+2026-03-26 21:42:47,943  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:42:49,413  INFO  Open positions: None
+2026-03-26 21:42:49,413  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:47:49,437  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:47:49,639  INFO  Available KRW: 1,604,107
+2026-03-26 21:47:56,024  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:47:57,779  INFO  Open positions: None
+2026-03-26 21:47:57,779  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:52:57,799  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:52:57,957  INFO  Available KRW: 1,604,107
+2026-03-26 21:53:04,500  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:53:06,221  INFO  Open positions: None
+2026-03-26 21:53:06,222  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 21:58:06,236  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 21:58:06,444  INFO  Available KRW: 1,604,107
+2026-03-26 21:58:12,972  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 21:58:14,683  INFO  Open positions: None
+2026-03-26 21:58:14,684  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 22:03:14,702  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:03:14,891  INFO  Available KRW: 1,604,107
+2026-03-26 22:03:21,269  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:03:23,008  INFO  Open positions: None
+2026-03-26 22:03:23,009  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 22:08:22,966  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:08:23,213  INFO  Available KRW: 1,604,107
+2026-03-26 22:08:29,643  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:08:31,328  INFO  Open positions: None
+2026-03-26 22:08:31,328  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 22:13:31,335  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:13:31,502  INFO  Available KRW: 1,604,107
+2026-03-26 22:13:37,971  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:13:39,705  INFO  Open positions: None
+2026-03-26 22:13:39,705  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 22:18:39,723  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:18:39,893  INFO  Available KRW: 1,604,107
+2026-03-26 22:18:46,416  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:18:48,216  INFO  Open positions: None
+2026-03-26 22:18:48,217  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 22:23:48,224  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:23:48,424  INFO  Available KRW: 1,604,107
+2026-03-26 22:23:55,102  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:23:56,798  INFO  Open positions: None
+2026-03-26 22:23:56,799  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 22:28:56,806  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:28:56,985  INFO  Available KRW: 1,604,107
+2026-03-26 22:29:02,926  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:29:04,586  INFO  Open positions: None
+2026-03-26 22:29:04,587  INFO  Sleeping 300s until next cycle...
+
+2026-03-26 22:34:04,598  INFO  ── Cycle start ──────────────────────────────
+2026-03-26 22:34:04,813  INFO  Available KRW: 1,604,107
+2026-03-26 22:34:10,831  INFO    KRW-DOGE — PROTECTED, skip
+2026-03-26 22:34:13,023  INFO  Open positions: None
+2026-03-26 22:34:13,028  INFO  Sleeping 300s until next cycle...
+
