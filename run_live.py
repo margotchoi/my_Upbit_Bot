@@ -47,7 +47,7 @@ def main():
             sys.exit(0)
 
     print()
-    trader.run(interval_seconds=300)  # 5분 간격
+    trader.run(interval_seconds=30)  # 30초 간격
 
 
 if __name__ == "__main__":
