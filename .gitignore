@@ -1,0 +1,21 @@
+# 민감한 정보
+.env
+*.env
+
+# 봇 실행 파일 (로컬 전용)
+positions.json
+equity_log.csv
+heartbeat.txt
+trade_log.txt
+backtest_results.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# 임시 파일
+~$*

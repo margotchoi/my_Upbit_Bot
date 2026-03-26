@@ -4,3 +4,5 @@ numpy
 python-dotenv
 requests
 tabulate
+streamlit
+plotly
