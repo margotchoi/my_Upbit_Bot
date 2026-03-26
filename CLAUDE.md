@@ -7,12 +7,12 @@ upbit_bot/
 ├── config.py          # 전략 파라미터 설정
 ├── indicators.py      # 기술 지표 계산 (RSI, MA, BB, 변동성 돌파)
 ├── backtest.py        # 백테스트 엔진
-├── trader.py          # 실거래 봇 (5분 사이클)
+├── trader.py          # 실거래 봇 (30초 사이클)
 ├── dashboard.py       # Streamlit 대시보드
 ├── data_fetcher.py    # 상위 N개 코인 조회
 ├── run_live.py        # 실거래 실행 진입점
 ├── main.py            # 백테스트 실행 진입점
-├── balance.json       # 잔고 스냅샷 (봇이 5분마다 업데이트)
+├── balance.json       # 잔고 스냅샷 (봇이 30초마다 업데이트)
 ├── positions.json     # 열린 포지션
 ├── equity_log.csv     # 수익 곡선 데이터
 ├── trade_log.txt      # 거래 기록
@@ -29,7 +29,7 @@ upbit_bot/
 - **최대 동시 포지션**: 5개
 - **스캔 대상**: 거래량 상위 20개 코인 (스테이블코인 제외)
 - **보호 티커**: KRW-DOGE (절대 매매 안 함)
-- **사이클 간격**: 5분
+- **사이클 간격**: 30초
 
 ## 설정값 (config.py)
 
@@ -53,7 +53,23 @@ TOP_N_COINS = 20
 
 ## 실행 방법
 
-### 로컬 실행
+### Oracle Cloud 서버에서 봇 시작
+```bash
+ssh -i ~/Downloads/ssh-key-2026-03-26.key ubuntu@168.107.33.88
+cd my_Upbit_Bot
+git pull origin main
+nohup python3 run_live.py > bot.log 2>&1 &
+tail -f bot.log   # 로그 확인 (Ctrl+C로 종료)
+```
+
+### 봇 종료
+```bash
+ssh -i ~/Downloads/ssh-key-2026-03-26.key ubuntu@168.107.33.88
+cd my_Upbit_Bot
+pkill -f run_live.py
+```
+
+### 로컬 실행 (개발/테스트용)
 ```bash
 # 백테스트
 python3 main.py
@@ -65,59 +81,48 @@ python3 run_live.py
 streamlit run dashboard.py --server.port 8502
 ```
 
-### Oracle Cloud 서버 실행
-```bash
-ssh -i ~/Downloads/ssh-key-2026-03-26.key ubuntu@168.107.33.88
-cd my_Upbit_Bot
-git pull origin main
-nohup python3 run_live.py > bot.log 2>&1 &
-tail -f bot.log   # 로그 확인
-```
-
-### 봇 종료
-```bash
-pkill -f run_live.py
-```
-
 ## 배포 구조
 
 ```
-로컬 맥북 or Oracle Cloud 서버
+Oracle Cloud 서버 (168.107.33.88) — 24시간 상시 실행
     └── run_live.py 실행
-        └── 5분마다 balance.json, positions.json 등 업데이트
+        └── 30초마다 balance.json, positions.json 등 업데이트
             └── git push → github.com/margotchoi/my_Upbit_Bot
                 └── Streamlit Cloud 자동 반영
-                    └── https://myupbitbot.streamlit.app
+                    └── https://myupbitbot.streamlit.app (PC/모바일 모두 접속 가능)
 ```
 
 ## Streamlit Cloud 설정
 
+- **URL**: https://myupbitbot.streamlit.app
 - **Repository**: margotchoi/my_Upbit_Bot
 - **Branch**: main
 - **Main file**: dashboard.py
-- **Secrets**:
+- **Secrets** (share.streamlit.io → 앱 → ⋮ → Settings → Secrets):
   ```toml
   UPBIT_ACCESS_KEY = "..."
   UPBIT_SECRET_KEY = "..."
   ```
 - 잔고/포지션은 API 직접 호출 없이 `balance.json` 파일에서 읽음
-  (Upbit API IP 제한 우회)
+  (Upbit API의 IP 제한 우회)
 
 ## Oracle Cloud 서버 정보
 
 - **IP**: 168.107.33.88
-- **OS**: Ubuntu
+- **OS**: Ubuntu (Always Free 티어 — 영구 무료)
+- **Shape**: VM.Standard.E2.1.Micro
 - **SSH 키**: ~/Downloads/ssh-key-2026-03-26.key
 - **코드 경로**: ~/my_Upbit_Bot
+- **Upbit API 허용 IP**: 168.107.33.88 등록 필요 (업비트 앱 → Open API 관리)
 
 ## GitHub 인증 (서버)
 
-서버에서 git push 하려면 Personal Access Token 필요:
+서버에서 git push 하려면 Personal Access Token (classic, repo 권한) 필요:
 ```bash
-git remote set-url origin https://<TOKEN>@github.com/margotchoi/my_Upbit_Bot.git
+git remote set-url origin https://margotchoi:<TOKEN>@github.com/margotchoi/my_Upbit_Bot.git
 ```
 
-## .env 파일 (로컬 & 서버 모두 필요)
+## .env 파일 (로컬 & 서버 모두 필요, gitignore 처리됨)
 
 ```
 UPBIT_ACCESS_KEY=...
