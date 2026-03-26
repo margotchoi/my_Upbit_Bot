@@ -1,5 +1,6 @@
 import json
 import logging
+import subprocess
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -247,6 +248,22 @@ class UpbitTrader:
 
         log.info(f"Open positions: {list(self.positions.keys()) or 'None'}")
 
+    def _git_push(self):
+        """Commit and push data files to GitHub so Streamlit Cloud can read them."""
+        repo = Path(__file__).parent
+        try:
+            subprocess.run(["git", "add", "positions.json", "equity_log.csv", "heartbeat.txt", "trade_log.txt"],
+                           cwd=repo, capture_output=True)
+            result = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
+            if result.returncode != 0:  # there are staged changes
+                subprocess.run(["git", "commit", "-m", f"bot: data update {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
+                               cwd=repo, capture_output=True)
+                subprocess.run(["git", "push", "origin", "main"],
+                               cwd=repo, capture_output=True)
+                log.info("📤 Data pushed to GitHub.")
+        except Exception as e:
+            log.warning(f"Git push failed: {e}")
+
     def run(self, interval_seconds: int = 300):
         """Main loop — runs every interval_seconds (default 5 min)."""
         log.info(f"🚀 Live trading started. Cycle interval: {interval_seconds}s")
@@ -262,5 +279,6 @@ class UpbitTrader:
             except Exception as e:
                 log.error(f"Unexpected error in cycle: {e}")
 
+            self._git_push()
             log.info(f"Sleeping {interval_seconds}s until next cycle...\n")
             time.sleep(interval_seconds)

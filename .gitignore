@@ -2,11 +2,7 @@
 .env
 *.env
 
-# 봇 실행 파일 (로컬 전용)
-positions.json
-equity_log.csv
-heartbeat.txt
-trade_log.txt
+# 백테스트 결과
 backtest_results.csv
 
 # Python
