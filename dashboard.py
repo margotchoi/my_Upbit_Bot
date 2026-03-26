@@ -21,6 +21,7 @@ POSITIONS_FILE  = Path(__file__).parent / "positions.json"
 TRADE_LOG_FILE  = Path(__file__).parent / "trade_log.txt"
 EQUITY_LOG_FILE = Path(__file__).parent / "equity_log.csv"
 BOT_HEARTBEAT   = Path(__file__).parent / "heartbeat.txt"
+BALANCE_FILE    = Path(__file__).parent / "balance.json"
 
 st.set_page_config(page_title="Upbit Bot", page_icon="📊", layout="wide")
 st.markdown("<style>footer{display:none} #MainMenu{display:none} header{display:none} .block-container{padding:0!important;max-width:100%!important}</style>", unsafe_allow_html=True)
@@ -28,9 +29,17 @@ st.markdown("<style>footer{display:none} #MainMenu{display:none} header{display:
 # ── helpers ─────────────────────────────────────────────────────────
 @st.cache_resource
 def get_upbit():
-    return pyupbit.Upbit(UPBIT_ACCESS_KEY, UPBIT_SECRET_KEY)
+    try:
+        return pyupbit.Upbit(UPBIT_ACCESS_KEY, UPBIT_SECRET_KEY)
+    except:
+        return None
 
 upbit = get_upbit()
+
+def load_balance():
+    if BALANCE_FILE.exists():
+        return json.loads(BALANCE_FILE.read_text(encoding="utf-8"))
+    return {"krw": 0, "open_value": 0, "open_pnl": 0, "total": 0}
 
 def load_positions():
     if POSITIONS_FILE.exists():
@@ -108,13 +117,13 @@ def load_chart_ohlcv(ticker, interval):
 
 # ── fetch data ───────────────────────────────────────────────────────
 positions   = load_positions()
-krw         = float(upbit.get_balance("KRW") or 0)
+balance     = load_balance()
+krw         = balance["krw"]
+open_value  = balance["open_value"]
+open_pnl    = balance["open_pnl"]
+total       = balance["total"]
 open_tickers = list(positions.keys())
 prices      = get_prices(open_tickers)
-
-open_value = sum(positions[t]["amount_krw"] * (prices.get(t, positions[t]["buy_price"]) / positions[t]["buy_price"]) for t in positions)
-open_pnl   = sum(positions[t]["amount_krw"] * (prices.get(t, positions[t]["buy_price"]) / positions[t]["buy_price"] - 1) for t in positions)
-total       = krw + open_value
 
 today_str = datetime.now().strftime("%Y-%m-%d")
 today_pnl = 0.0

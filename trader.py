@@ -199,6 +199,35 @@ class UpbitTrader:
             datetime.now().isoformat(), encoding="utf-8"
         )
 
+    def _save_balance(self):
+        """Save balance snapshot to balance.json for Streamlit Cloud dashboard."""
+        try:
+            krw = self.get_krw_balance()
+            open_value = sum(
+                pos["amount_krw"] * (
+                    float(pyupbit.get_current_price(t) or pos["buy_price"]) / pos["buy_price"]
+                )
+                for t, pos in self.positions.items()
+            )
+            open_pnl = sum(
+                pos["amount_krw"] * (
+                    float(pyupbit.get_current_price(t) or pos["buy_price"]) / pos["buy_price"] - 1
+                )
+                for t, pos in self.positions.items()
+            )
+            data = {
+                "krw": krw,
+                "open_value": open_value,
+                "open_pnl": open_pnl,
+                "total": krw + open_value,
+                "updated_at": datetime.now().isoformat(),
+            }
+            Path(__file__).parent.joinpath("balance.json").write_text(
+                json.dumps(data, ensure_ascii=False), encoding="utf-8"
+            )
+        except Exception as e:
+            log.warning(f"_save_balance failed: {e}")
+
     def run_cycle(self):
         self._write_heartbeat()
         log.info("── Cycle start ──────────────────────────────")
@@ -247,12 +276,13 @@ class UpbitTrader:
             time.sleep(0.3)   # Rate limit buffer
 
         log.info(f"Open positions: {list(self.positions.keys()) or 'None'}")
+        self._save_balance()
 
     def _git_push(self):
         """Commit and push data files to GitHub so Streamlit Cloud can read them."""
         repo = Path(__file__).parent
         try:
-            subprocess.run(["git", "add", "positions.json", "equity_log.csv", "heartbeat.txt", "trade_log.txt"],
+            subprocess.run(["git", "add", "positions.json", "equity_log.csv", "heartbeat.txt", "trade_log.txt", "balance.json"],
                            cwd=repo, capture_output=True)
             result = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
             if result.returncode != 0:  # there are staged changes
