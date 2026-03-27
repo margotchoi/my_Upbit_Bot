@@ -6,6 +6,12 @@ import json
 import requests
 from datetime import datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
+
+KST = ZoneInfo("Asia/Seoul")
+
+def now_kst():
+    return datetime.now(tz=KST)
 
 import pandas as pd
 import pyupbit
@@ -55,13 +61,15 @@ def get_prices(tickers):
 def bot_status():
     if BOT_HEARTBEAT.exists():
         ts = datetime.fromisoformat(BOT_HEARTBEAT.read_text().strip())
-        if datetime.now() - ts < timedelta(minutes=10):
+        if ts.tzinfo is None:
+            ts = ts.replace(tzinfo=KST)
+        if now_kst() - ts < timedelta(minutes=10):
             return True
     return False
 
 def append_equity(equity):
     with open(EQUITY_LOG_FILE, "a") as f:
-        f.write(f"{datetime.now().isoformat()},{equity:.0f}\n")
+        f.write(f"{now_kst().isoformat()},{equity:.0f}\n")
 
 def load_equity_history():
     if not EQUITY_LOG_FILE.exists(): return []
@@ -127,7 +135,7 @@ total       = balance["total"]
 open_tickers = list(positions.keys())
 prices      = get_prices(open_tickers)
 
-today_str = datetime.now().strftime("%Y-%m-%d")
+today_str = now_kst().strftime("%Y-%m-%d")
 today_pnl = 0.0
 total_trades_count, wins_count, total_pnl_pct_sum = 0, 0, 0.0
 if TRADE_LOG_FILE.exists():
@@ -189,7 +197,9 @@ else:
         pnl_pct = (cp - bp) / bp * 100
         pnl_krw = pos["amount_krw"] * pnl_pct / 100
         sell_time = datetime.fromisoformat(pos["sell_time"])
-        remaining = sell_time - datetime.now()
+        if sell_time.tzinfo is None:
+            sell_time = sell_time.replace(tzinfo=KST)
+        remaining = sell_time - now_kst()
         rem_str = (f"{int(remaining.total_seconds()//3600)}시간 {int((remaining.total_seconds()%3600)//60)}분 후 매도"
                    if remaining.total_seconds() > 0 else "⚡ 매도 대기")
         price_range = bp * 0.06
@@ -266,7 +276,7 @@ for ticker in PROTECTED_TICKERS:
     color = "var(--green)" if chg_val >= 0 else "var(--red)"
     prot_pnl_info = f'<div style="font-size:11px;color:{color};margin-top:2px">{arrow} {abs(chg_val):.2f}% (24h)</div>'
 
-now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+now_str = now_kst().strftime("%Y-%m-%d %H:%M:%S")
 initial_capital = 1604107
 
 open_pnl_sign = "+" if open_pnl >= 0 else ""

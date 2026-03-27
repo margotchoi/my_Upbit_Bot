@@ -6,6 +6,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+KST = ZoneInfo("Asia/Seoul")
+
+def now_kst():
+    return datetime.now(tz=KST)
+
 import pandas as pd
 import pyupbit
 
@@ -117,9 +122,11 @@ class UpbitTrader:
 
         buy_price = position["buy_price"]
         sell_time = datetime.fromisoformat(position["sell_time"])
+        if sell_time.tzinfo is None:
+            sell_time = sell_time.replace(tzinfo=KST)
 
         # ── 1. 9AM scheduled sell ──
-        if datetime.now() >= sell_time:
+        if now_kst() >= sell_time:
             return True, "9AM Sell"
 
         # ── 2. Stop loss ──
@@ -145,7 +152,7 @@ class UpbitTrader:
                 log.error(f"BUY FAILED {ticker}: {order}")
                 return False
 
-            now = datetime.now()
+            now = now_kst()
             # Sell at 9AM the next calendar day
             next_9am = (now + timedelta(days=1)).replace(
                 hour=9, minute=0, second=0, microsecond=0
@@ -201,7 +208,7 @@ class UpbitTrader:
 
     def _write_heartbeat(self):
         Path(__file__).parent.joinpath("heartbeat.txt").write_text(
-            datetime.now().isoformat(), encoding="utf-8"
+            now_kst().isoformat(), encoding="utf-8"
         )
 
     def _save_balance(self):
@@ -225,7 +232,7 @@ class UpbitTrader:
                 "open_value": open_value,
                 "open_pnl": open_pnl,
                 "total": krw + open_value,
-                "updated_at": datetime.now().isoformat(),
+                "updated_at": now_kst().isoformat(),
             }
             Path(__file__).parent.joinpath("balance.json").write_text(
                 json.dumps(data, ensure_ascii=False), encoding="utf-8"
@@ -296,7 +303,7 @@ class UpbitTrader:
                            cwd=repo, capture_output=True)
             result = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
             if result.returncode != 0:
-                subprocess.run(["git", "commit", "-m", f"bot: data update {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
+                subprocess.run(["git", "commit", "-m", f"bot: data update {now_kst().strftime('%Y-%m-%d %H:%M')}"],
                                cwd=repo, capture_output=True)
                 subprocess.run(["git", "push", "origin", "main"],
                                cwd=repo, capture_output=True)
