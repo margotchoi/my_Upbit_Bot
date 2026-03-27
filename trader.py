@@ -294,15 +294,8 @@ class UpbitTrader:
         """Commit and push data files to GitHub so Streamlit Cloud can read them."""
         repo = Path(__file__).parent
         try:
-            # Pull latest code changes first
-            r = subprocess.run(["git", "stash"], cwd=repo, capture_output=True, text=True)
-            r = subprocess.run(["git", "pull", "origin", "main", "--rebase"], cwd=repo, capture_output=True, text=True)
-            if r.returncode != 0:
-                log.warning(f"Git pull failed: {r.stderr.strip()}")
-            subprocess.run(["git", "stash", "pop"], cwd=repo, capture_output=True)
-            # Push data files
-            subprocess.run(["git", "add", "positions.json", "equity_log.csv", "heartbeat.txt", "trade_log.txt", "balance.json"],
-                           cwd=repo, capture_output=True)
+            files = ["heartbeat.txt", "balance.json", "positions.json", "equity_log.csv", "trade_log.txt"]
+            subprocess.run(["git", "add"] + files, cwd=repo, capture_output=True)
             result = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo)
             if result.returncode != 0:
                 subprocess.run(["git", "commit", "-m", f"bot: data update {now_kst().strftime('%Y-%m-%d %H:%M')}"],
@@ -312,8 +305,6 @@ class UpbitTrader:
                     log.info("📤 Data pushed to GitHub.")
                 else:
                     log.warning(f"Git push failed: {r.stderr.strip()}")
-            else:
-                log.info("Git: no changes to push.")
         except Exception as e:
             log.warning(f"Git push failed: {e}")
 
