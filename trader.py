@@ -295,8 +295,10 @@ class UpbitTrader:
         repo = Path(__file__).parent
         try:
             # Pull latest code changes first
-            subprocess.run(["git", "stash"], cwd=repo, capture_output=True)
-            subprocess.run(["git", "pull", "origin", "main", "--rebase"], cwd=repo, capture_output=True)
+            r = subprocess.run(["git", "stash"], cwd=repo, capture_output=True, text=True)
+            r = subprocess.run(["git", "pull", "origin", "main", "--rebase"], cwd=repo, capture_output=True, text=True)
+            if r.returncode != 0:
+                log.warning(f"Git pull failed: {r.stderr.strip()}")
             subprocess.run(["git", "stash", "pop"], cwd=repo, capture_output=True)
             # Push data files
             subprocess.run(["git", "add", "positions.json", "equity_log.csv", "heartbeat.txt", "trade_log.txt", "balance.json"],
@@ -305,9 +307,13 @@ class UpbitTrader:
             if result.returncode != 0:
                 subprocess.run(["git", "commit", "-m", f"bot: data update {now_kst().strftime('%Y-%m-%d %H:%M')}"],
                                cwd=repo, capture_output=True)
-                subprocess.run(["git", "push", "origin", "main"],
-                               cwd=repo, capture_output=True)
-                log.info("📤 Data pushed to GitHub.")
+                r = subprocess.run(["git", "push", "origin", "main"], cwd=repo, capture_output=True, text=True)
+                if r.returncode == 0:
+                    log.info("📤 Data pushed to GitHub.")
+                else:
+                    log.warning(f"Git push failed: {r.stderr.strip()}")
+            else:
+                log.info("Git: no changes to push.")
         except Exception as e:
             log.warning(f"Git push failed: {e}")
 
