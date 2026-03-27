@@ -74,7 +74,7 @@ def append_equity(equity):
 def load_equity_history():
     if not EQUITY_LOG_FILE.exists(): return []
     df = pd.read_csv(EQUITY_LOG_FILE, names=["time","equity"])
-    df["time"] = pd.to_datetime(df["time"])
+    df["time"] = pd.to_datetime(df["time"], format='ISO8601', utc=True).dt.tz_convert("Asia/Seoul")
     df = df.sort_values("time")
     df["date"] = df["time"].dt.date
     df = df.groupby("date")["equity"].last().reset_index()
